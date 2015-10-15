@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cmipl-App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login_page">LoginPage</string>
+    <string name="title_activity_home_page">HomePage</string>
+    <string name="title_activity_trade_coverage">TradeCoverage</string>
+    <string name="title_activity_traders_options">TradersOptions</string>
+    <string name="title_activity_order_booking">OrderBooking</string>
+    <string name="title_activity_order_management">OrderManagement</string>
+    <string name="title_activity_reports">Reports</string>
+
+    <string-array name="brand_Name">
+        <item>All Brand</item>
+        <item>figaro</item>
+        <item>Bartoli</item>
+    </string-array>
+    <string-array name="Category_Name">
+        <item>All Category</item>
+        <item>Demo Category1</item>
+        <item>Demo Category2</item>
+    </string-array>
+    <string-array name="SubCategory_Name">
+        <item>All SubCategory</item>
+        <item>Demo SubCategory1</item>
+        <item>Demo SubCategory2</item>
+    </string-array>
+    <string-array name="RetailerTypes">
+        <item>General Trader</item>
+        <item>Modern Trader</item>
+        <item>E-Commerce</item>
+        <item>Institution</item>
+    </string-array>
+    <string-array name="UnderPack">
+        <item>Non</item>
+        <item>Bigbazar</item>
+        <item>Hyper City</item>
+        <item>D-Mart</item>
+        <item>Flipkart</item>
+        <item>Ebay</item>
+        <item>BigBasket</item>
+    </string-array>
+    <string-array name="StoreType">
+        <item>Medical</item>
+        <item>WholeSale</item>
+        <item>Dry Fruits</item>
+        <item>Cosmetics</item>
+        <item>Grocery</item>
+        <item>Baby Care</item>
+        <item>Gourmet</item>
+    </string-array>
+    <string-array name="StoreSize">
+        <item>SuperStore</item>
+        <item>HyperStore</item>
+        <item>Mega Store</item>
+        <item>Cash n Carry</item>
+    </string-array>
+
+    <string name="title_activity_help">Help</string>
+    <string name="title_activity_new_user">NewUser</string>
+    <string name="title_activity_new_retailer2">NewRetailer2</string>
+    <string name="title_activity_order_edit">OrderEdit</string>
+    <string name="title_activity_invoice">Invoice</string>
+    <string name="title_activity_visibility">Visibility</string>
+    <string name="title_activity_oder_details">OderDetails</string>
+    <string name="title_activity_confirm_order_booking">ConfirmOrderBooking</string>
+
+</resources>

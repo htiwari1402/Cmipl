@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cmipl.cmipl_app"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="com.example.googlemaps.permission.MAPS_RECEIVE" />
+
+    <permission
+        android:name="com.example.googlemaps.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen" >
+
+        <!-- Goolge Maps API Key -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAatDNZQtxgYqj7HKlKmPlOVQLeKLF-cEY" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginPage"
+            android:label="@string/title_activity_login_page" >
+        </activity>
+        <activity
+            android:name=".HomePage"
+            android:label="@string/title_activity_home_page" >
+        </activity>
+        <activity
+            android:name=".TradeCoverage"
+            android:label="@string/title_activity_trade_coverage" >
+        </activity>
+        <activity
+            android:name=".TradersOptions"
+            android:label="@string/title_activity_traders_options" >
+        </activity>
+        <activity
+            android:name=".OrderBooking"
+            android:label="@string/title_activity_order_booking" >
+        </activity>
+        <activity
+            android:name=".OrderManagement"
+            android:label="@string/title_activity_order_management" >
+        </activity>
+        <activity
+            android:name=".Reports"
+            android:label="@string/title_activity_reports" >
+        </activity>
+        <activity
+            android:name=".Help"
+            android:label="@string/title_activity_help" >
+        </activity>
+        <activity
+            android:name=".NewUser"
+            android:label="@string/title_activity_new_user" >
+        </activity>
+        <activity
+            android:name=".NewRetailer2"
+            android:label="@string/title_activity_new_retailer2" >
+        </activity>
+        <activity
+            android:name=".OrderEdit"
+            android:label="@string/title_activity_order_edit" >
+        </activity>
+        <activity
+            android:name=".Invoice"
+            android:label="@string/title_activity_invoice" >
+        </activity>
+        <activity
+            android:name=".Visibility"
+            android:label="@string/title_activity_visibility" >
+        </activity>
+        <activity
+            android:name=".OderDetails"
+            android:label="@string/title_activity_oder_details" >
+        </activity>
+        <activity
+            android:name=".ConfirmOrderBooking"
+            android:label="@string/title_activity_confirm_order_booking" >
+        </activity>
+    </application>
+
+</manifest>

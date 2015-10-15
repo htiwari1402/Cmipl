@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#1ea8e0" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="450sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/edit_drawable" >
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="10sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" >
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/edittxtLoginPageUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/relativeLayout1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10" 
+                    android:hint="Username">
+
+                   
+                </EditText>
+
+                <EditText
+                    android:id="@+id/edittxtLoginPagePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relativeLayout1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="Password" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="70sp"
+                    android:layout_height="70sp"
+                    android:layout_above="@+id/edittxtLoginPageUsername"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="25sp"
+                    android:src="@drawable/companylogo" />
+
+                <Button
+                    android:id="@+id/btnLoginPagelogin"
+                    android:layout_width="100sp"
+                    android:layout_height="40sp"
+                    android:layout_below="@+id/edittxtLoginPagePassword"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:text="Login" 
+                    android:background="#8deeee"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
