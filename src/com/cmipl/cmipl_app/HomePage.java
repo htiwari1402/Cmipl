@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class HomePage extends Activity {
 
@@ -15,11 +16,24 @@ public class HomePage extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home_page);
-		ImageView imgTradecoverage= (ImageView) findViewById(R.id.imgTradecoverage);
-		ImageView imgOrder= (ImageView) findViewById(R.id.imgOrderManagment);
-		ImageView imgreports= (ImageView) findViewById(R.id.imgreports);
-		ImageView imghelp= (ImageView) findViewById(R.id.imgHelp);
-		ImageView imgNew= (ImageView) findViewById(R.id.imgHomePageNew);
+		ImageView imgTradecoverage = (ImageView) findViewById(R.id.imgTradecoverage);
+		ImageView imgOrder         = (ImageView) findViewById(R.id.imgOrderManagment);
+		ImageView imgreports       = (ImageView) findViewById(R.id.imgreports);
+		ImageView imghelp          = (ImageView) findViewById(R.id.imgHelp);
+		ImageView imgNew           = (ImageView) findViewById(R.id.imgHomePageNew);
+		ImageView imglocation      = (ImageView) findViewById(R.id.imgLoc);
+		
+		imglocation.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			
+				Intent i= new Intent(HomePage.this, MyLocation.class);
+				startActivity(i);
+			}
+		});
 		
 		
 		imgNew.setOnClickListener(new OnClickListener() {

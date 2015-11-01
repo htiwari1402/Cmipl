@@ -41,18 +41,18 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtOrderBookingTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Total Pcs"
+            android:text=""
             android:textColor="#ffffff"
             android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txtOrderBookingTotalvalues"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -71,36 +71,32 @@
         android:background="#1ea8e0" >
 
         <Spinner
-            android:id="@+id/spinTradecoverageRoute"
+            android:id="@+id/spinOrderBookingBrand"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight=".8"
             android:background="#1ea8e0"
-            
-            android:textStyle="bold"
-            android:textSize="15sp" 
+          
             android:entries="@array/brand_Name"/>
 
         <Spinner
-            android:id="@+id/spinTradecoverageNear"
+            android:id="@+id/spinOrderBookingCategory"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight=".8"
             android:background="#1ea8e0"
-         
-              android:textStyle="bold"
-            android:textSize="15sp"
+          
             android:entries="@array/Category_Name" />
 
         <Spinner
-            android:id="@+id/spinTradecoverageMap"
+            android:id="@+id/spinOrderBookingSubCategory"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:background="#1ea8e0"
-              android:textStyle="bold"
+      
            
-            android:textSize="15sp" 
+         
             android:entries="@array/SubCategory_Name"/>
     </LinearLayout>
 
@@ -137,8 +133,6 @@
                 android:layout_centerVertical="true"
                 android:background="@drawable/edittext"
                 android:ems="10" >
-
-                <requestFocus />
             </EditText>
         </RelativeLayout>
     </LinearLayout>

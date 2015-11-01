@@ -54,7 +54,7 @@
                 android:background="@drawable/edittext"
                 android:ems="10" >
 
-                <requestFocus />
+               
             </EditText>
         </RelativeLayout>
     </LinearLayout>

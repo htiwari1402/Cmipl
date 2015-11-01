@@ -17,7 +17,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="0dp" >
 
-            <TextView
+            <EditText
                 android:id="@+id/edittxtOderBookingDiscount"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -47,7 +47,7 @@
             android:layout_marginRight="0dp"
             android:layout_toLeftOf="@+id/relativeLayout4" >
 
-            <TextView
+            <EditText
                 android:id="@+id/edittxtOrderBookingScheme"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -77,7 +77,7 @@
             android:layout_marginRight="0dp"
             android:layout_toLeftOf="@+id/relativeLayout6" >
 
-            <TextView
+            <EditText
                 android:id="@+id/edittxtOrderBookingOrderNo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

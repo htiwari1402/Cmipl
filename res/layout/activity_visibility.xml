@@ -33,7 +33,7 @@
             android:id="@+id/textVisibilityRetailerName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Te"
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:textSize="17sp"
@@ -78,8 +78,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Upload Pic"
-             android:background="#ffffff"
-            android:textColor="#1ea8e0" 
+             android:background="#a8a8a8"
+            android:textColor="#000000" 
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -119,13 +119,21 @@
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listVisibilityPic"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearLayout3"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/linearLayout4" >
-    </ListView>
+        android:layout_below="@+id/linearLayout4"
+        android:layout_centerHorizontal="true" >
+
+        <GridView
+            android:id="@+id/gridviewVisibility"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+          
+            android:numColumns="3" >
+        </GridView>
+
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -66,5 +66,6 @@
     <string name="title_activity_visibility">Visibility</string>
     <string name="title_activity_oder_details">OderDetails</string>
     <string name="title_activity_confirm_order_booking">ConfirmOrderBooking</string>
+    <string name="title_activity_location">Location</string>
 
 </resources>

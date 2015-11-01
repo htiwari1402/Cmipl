@@ -107,6 +107,10 @@
             android:name=".ConfirmOrderBooking"
             android:label="@string/title_activity_confirm_order_booking" >
         </activity>
+        <activity
+            android:name=".MyLocation"
+            android:label="@string/title_activity_location" >
+        </activity>
     </application>
 
 </manifest>

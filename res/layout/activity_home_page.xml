@@ -251,7 +251,7 @@
                      android:layout_weight="1" >
 
                     <ImageView
-                        android:id="@+id/imageView9"
+                        android:id="@+id/imgLoc"
                         android:layout_width="65sp"
                         android:layout_height="65sp"
                         android:layout_centerHorizontal="true"
@@ -262,7 +262,7 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/imageView9"
+                        android:layout_below="@+id/imgLoc"
                         android:layout_centerHorizontal="true"
                         android:text="Location"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
