@@ -8,4 +8,5 @@ public class OrderBooking_Map {
 
 	
 	public static HashMap<String , String > order = new HashMap<String , String>();
+	public static HashMap<String , String > order2 = new HashMap<String , String>();
 }

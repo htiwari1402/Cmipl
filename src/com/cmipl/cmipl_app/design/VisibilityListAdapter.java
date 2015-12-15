@@ -1,5 +1,6 @@
 package com.cmipl.cmipl_app.design;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -71,7 +72,11 @@ public class VisibilityListAdapter extends BaseAdapter{
           	if(f.exists()){
           		
           		Bitmap picture = BitmapFactory.decodeFile(f.getAbsolutePath());
-          		imageView.setImageBitmap(picture);
+          		Bitmap photo = (Bitmap) picture;
+          		photo = Bitmap.createScaledBitmap(photo, 100, 100, false);
+          		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+          		photo.compress(Bitmap.CompressFormat.JPEG, 40, bytes);
+          		imageView.setImageBitmap(photo);
           		
           		
           	}

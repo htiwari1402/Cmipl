@@ -111,6 +111,18 @@
             android:name=".MyLocation"
             android:label="@string/title_activity_location" >
         </activity>
+        <activity
+            android:name=".ConfirmOrder"
+            android:label="@string/title_activity_confirm_order" >
+        </activity>
+        <activity
+            android:name=".OTPCheck"
+            android:label="@string/title_activity_otpcheck" >
+        </activity>
+        <activity
+            android:name=".NewAddRetailer"
+            android:label="@string/title_activity_new_add_retailer" >
+        </activity>
     </application>
 
 </manifest>

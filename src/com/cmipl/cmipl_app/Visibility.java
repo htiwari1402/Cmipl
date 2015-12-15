@@ -7,6 +7,7 @@ import java.util.Date;
 
 import com.cmipl.cmipl_app.design.VisibilityListAdapter;
 
+import URL.Url;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -44,7 +45,16 @@ public class Visibility extends Activity {
 		retailername        =     i.getStringExtra("Retailer");
 		gridlist            = (GridView)findViewById(R.id.gridviewVisibility);
 		Button btnUploadPic = (Button) findViewById(R.id.btnUploadPic);
+		Button btnExit = (Button) findViewById(R.id.btnvisibilityExit);
 		
+		btnExit.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
 	//	new LoadImage().execute();
 		
 		
@@ -73,7 +83,8 @@ public class Visibility extends Activity {
 			         {
 			            count++;
 			         }
-			    }
+			    }        
+				  
 						 takePhoto(v);
 			  }
 			   else
@@ -98,6 +109,8 @@ public class Visibility extends Activity {
 	{
 		// TODO Auto-generated method stub
 		Intent i = new Intent("android.media.action.IMAGE_CAPTURE");
+		ServiceHandler sh = new ServiceHandler();
+		//sh.makeServiceCall(Url.URL+"SOVisitServiceAdd.php?so_id=""&store_id=23&image=yes&order=no", ServiceHandler.GET);
 		String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 		int newcount= count+1;
 		File f = new File(Environment.getExternalStorageDirectory()+"/cmipl/"+retailername+"/" , "pic"+newcount+date+".jpg");

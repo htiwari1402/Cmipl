@@ -17,16 +17,15 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
             android:text="Medium Text"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/txtConfirmOrder_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/txtConfirmOrderBooking_Listproduct"
             android:layout_alignBottom="@+id/txtConfirmOrderBooking_Listproduct"
-            android:layout_marginLeft="47dp"
-            android:layout_toRightOf="@+id/txtConfirmOrderBooking_Listproduct"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="23dp"
             android:text="TextView" />
 
     </RelativeLayout>

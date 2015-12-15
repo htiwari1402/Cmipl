@@ -37,7 +37,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="28dp"
-            android:text="TextView"
+            android:text=""
             android:textColor="#ffffff"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/txtTraderOptionsStoreName"
             android:layout_alignParentBottom="true"
-            android:text="TextView"
+            android:text=""
             android:textColor="#ffffff"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                  android:background="#c8c8c8"
+                  android:background="#ffffff"
                 android:text="Order Edit"
                 
                 android:textSize="20sp"
@@ -105,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="#c8c8c8"
+                android:background="#ffffff"
                 android:text="Invoice"
                 
                 android:textSize="20sp"

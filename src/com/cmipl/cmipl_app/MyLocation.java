@@ -64,15 +64,6 @@ public class MyLocation extends Activity {
                 R.id.MapfragmentLocation)).getMap();
 		
 		googlemap.setMyLocationEnabled(true);
-		LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
-		Criteria criteria = new Criteria();
-		String provider = service.getBestProvider(criteria, false);
-		Location location = service.getLastKnownLocation(provider);
-		
-		double a= location.getLatitude();
-		double b = location.getLongitude();
-		
-		Toast.makeText(MyLocation.this, ""+a+b, Toast.LENGTH_LONG).show();
 		
 	
 		

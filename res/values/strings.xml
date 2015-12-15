@@ -67,5 +67,8 @@
     <string name="title_activity_oder_details">OderDetails</string>
     <string name="title_activity_confirm_order_booking">ConfirmOrderBooking</string>
     <string name="title_activity_location">Location</string>
+    <string name="title_activity_confirm_order">ConfirmOrder</string>
+    <string name="title_activity_otpcheck">OTPCheck</string>
+    <string name="title_activity_new_add_retailer">NewAddRetailer</string>
 
 </resources>

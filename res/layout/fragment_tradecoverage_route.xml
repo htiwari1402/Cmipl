@@ -15,7 +15,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/linearbelow2"
         android:layout_width="match_parent"
         android:layout_height="3sp"
         android:layout_alignParentLeft="true"
@@ -30,7 +30,7 @@
         android:layout_height="100sp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/linearLayout1" >
+        android:layout_alignTop="@+id/linearbelow2" >
 
     </ListView>
 

@@ -22,7 +22,9 @@ public class HomePage extends Activity {
 		ImageView imghelp          = (ImageView) findViewById(R.id.imgHelp);
 		ImageView imgNew           = (ImageView) findViewById(R.id.imgHomePageNew);
 		ImageView imglocation      = (ImageView) findViewById(R.id.imgLoc);
-		
+		ImageView imgnew      = (ImageView) findViewById(R.id.imageView2);
+		ImageView imgnot     = (ImageView) findViewById(R.id.imageView3);
+		ImageView imgsyn      = (ImageView) findViewById(R.id.imageView10);
 		imglocation.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -41,18 +43,52 @@ public class HomePage extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i = new Intent(HomePage.this, NewUser.class);
+				Intent i = new Intent(HomePage.this, NewAddRetailer.class);
 				startActivity(i);
 			}
 		});
-		
+imgsyn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				Toast.makeText(HomePage.this, "Under Construction", Toast.LENGTH_LONG).show();
+				//Intent i = new Intent(HomePage.this, Help.class);
+				//startActivity(i);
+			}
+		});
+imgnot.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				Toast.makeText(HomePage.this, "Under Construction", Toast.LENGTH_LONG).show();
+				//Intent i = new Intent(HomePage.this, Help.class);
+				//startActivity(i);
+			}
+		});
+imgnew.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				Toast.makeText(HomePage.this, "Under Construction", Toast.LENGTH_LONG).show();
+				//Intent i = new Intent(HomePage.this, Help.class);
+				//startActivity(i);
+			}
+		});
 		imghelp.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i = new Intent(HomePage.this, Help.class);
-				startActivity(i);
+				
+				Toast.makeText(HomePage.this, "Under Construction", Toast.LENGTH_LONG).show();
+				//Intent i = new Intent(HomePage.this, Help.class);
+				//startActivity(i);
 			}
 		});
 		imgTradecoverage.setOnClickListener(new OnClickListener() {

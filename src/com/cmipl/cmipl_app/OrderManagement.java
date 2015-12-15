@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class OrderManagement extends Activity {
 
@@ -45,16 +46,16 @@ public class OrderManagement extends Activity {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
+					Toast.makeText(OrderManagement.this, "This Module is under construction", Toast.LENGTH_LONG).show();
 					
-					
-					FragmentTransaction ft = getFragmentManager().beginTransaction();
+					/*FragmentTransaction ft = getFragmentManager().beginTransaction();
 					      ft.show(frg_near) ;
 					      ft.hide(frag_route);
 					      ft.hide(frg_map);
 					      ft.commit();
 					      map.setBackgroundColor(Color.rgb(0, 176, 240));
 					      route.setBackgroundColor(Color.rgb(0, 176, 240));
-					      near.setBackgroundColor(Color.WHITE);
+					      near.setBackgroundColor(Color.WHITE);*/
 				}
 			});
 		
@@ -80,14 +81,16 @@ public class OrderManagement extends Activity {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					FragmentTransaction ft = getFragmentManager().beginTransaction();
+				/*	FragmentTransaction ft = getFragmentManager().beginTransaction();
 					      ft.hide(frag_route) ;
 					      ft.hide(frg_near);
 					      ft.show(frg_map);
 					      ft.commit();
 					      route.setBackgroundColor(Color.rgb(0, 176, 240));
 					      near.setBackgroundColor(Color.rgb(0, 176, 240));
-					      map.setBackgroundColor(Color.WHITE);
+					      map.setBackgroundColor(Color.WHITE);*/
+					Toast.makeText(OrderManagement.this, "This Module is under construction", Toast.LENGTH_LONG).show();
+					
 				}
 			});
 			

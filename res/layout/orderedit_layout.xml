@@ -105,7 +105,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/linearbelow2"
         android:layout_width="match_parent"
         android:layout_height="40sp"
         android:layout_below="@+id/linearLayout2"
@@ -130,7 +130,7 @@
             android:layout_height="match_parent" >
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/editxtNewRetailerCity"
                 android:layout_width="wrap_content"
                 android:layout_height="30sp"
                 android:layout_centerHorizontal="true"
@@ -149,7 +149,7 @@
         android:layout_height="25sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/linearLayout1" >
+        android:layout_below="@+id/linearbelow2" >
 
         <RelativeLayout
             android:id="@+id/relativeLayout3"

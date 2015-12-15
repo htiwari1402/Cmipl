@@ -35,9 +35,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:text="Visit"
+            android:text=""
             android:textColor="#ffffff"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
@@ -48,7 +48,7 @@
             android:layout_centerVertical="true"
             android:text=""
             android:textColor="#ffffff"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
@@ -59,8 +59,22 @@
             android:layout_centerVertical="true"
             android:text="Total Value"
             android:textColor="#ffffff"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtOrderBookingVisitNo"
+            android:layout_alignBottom="@+id/txtOrderBookingVisitNo"
+            android:layout_toLeftOf="@+id/txtOrderBookingTotal"
+            android:text="Total:"
+            android:textColor="#ffffff"
+             android:textStyle="bold"
+              android:textSize="15sp"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
     </RelativeLayout>
 
     <LinearLayout
@@ -73,11 +87,10 @@
         <Spinner
             android:id="@+id/spinOrderBookingBrand"
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight=".8"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.79"
             android:background="#1ea8e0"
-          
-            android:entries="@array/brand_Name"/>
+            android:entries="@array/brand_Name" />
 
         <Spinner
             android:id="@+id/spinOrderBookingCategory"
@@ -94,14 +107,11 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             android:background="#1ea8e0"
-      
-           
-         
-            android:entries="@array/SubCategory_Name"/>
+           />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/linearbelow2"
         android:layout_width="match_parent"
         android:layout_height="40sp"
         android:layout_below="@+id/linearLayout2"
@@ -110,30 +120,11 @@
         <RelativeLayout
             android:layout_width="70dp"
             android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@+id/TextView01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Search"
-                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
-
-            <EditText
-                android:id="@+id/editText1"
-                android:layout_width="wrap_content"
-                android:layout_height="30sp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/edittext"
-                android:ems="10" >
-            </EditText>
         </RelativeLayout>
     </LinearLayout>
 
@@ -143,7 +134,7 @@
         android:layout_height="25sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/linearLayout1" >
+        android:layout_below="@+id/linearbelow2" >
 
         <RelativeLayout
             android:id="@+id/relativeLayout3"
@@ -274,7 +265,7 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/btnOrderBookingCanel"
             android:layout_width="0sp"
             android:layout_height="match_parent"
             android:text="Cancel" 
@@ -325,7 +316,7 @@
                 android:textColor="#ffffff" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/txtOrderBookingOquantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -373,7 +364,7 @@
                 android:textColor="#ffffff" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/txtOrderBookingPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"

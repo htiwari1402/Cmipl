@@ -32,18 +32,19 @@ public class OrderBookingListAdapter extends ArrayAdapter   {
 
 	private final String[]  product;
 	private final String[]  productId;
-	
+	private final String[]  rate;
 	private final String retailername;
 	private final HashMap<String, String> map;
 	static int value;
 	
-	public OrderBookingListAdapter(Activity context,String[] product, String[]  productId, String retailername,HashMap<String, String> m) {
+	public OrderBookingListAdapter(Activity context,String[] product, String[]  productId, String retailername,HashMap<String, String> m,String[] rate) {
 	super(context, R.layout.orderbooking_listdesign, product);
 	this.context = context;
 	this.productId = productId;
 	this.product = product;
 	this.retailername = retailername;
 	this.map = m;
+	this.rate = rate;
 
 	
 	}
@@ -58,6 +59,14 @@ public class OrderBookingListAdapter extends ArrayAdapter   {
 	
 	
 	 
+	relativeListItem.setOnClickListener(new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			OrderBooking.setPrice(rate[position]);
+		}
+	});
 	
 	 
 	 Pcs.setOnFocusChangeListener(new OnFocusChangeListener() {
@@ -73,8 +82,10 @@ public class OrderBookingListAdapter extends ArrayAdapter   {
 				  {
 					value = Integer.parseInt(test.getText().toString());
 				    OrderBooking_Map.order.put(productId[position].toString(), test.getText().toString());
+				    OrderBooking_Map.order2.put(product[position], Pcs.getText().toString());
 				    try{
 				    	map.put(""+position, test.getText().toString());
+				    	OrderBooking.setTotal();
 				       }
 				    catch(Exception e)
 				       {
@@ -106,15 +117,12 @@ public class OrderBookingListAdapter extends ArrayAdapter   {
 			
 			if(!Pcs.getText().toString().equals(""))
 			   { int val = Integer.parseInt(Pcs.getText().toString());
-			     if(value > val){
-			    	 OrderBooking.setTotal(Integer.parseInt(Pcs.getText().toString()), false); 
-			     }
-			     else
-			     if(value < val){
-			    	 OrderBooking.setTotal(Integer.parseInt(Pcs.getText().toString()), true);
-			     }	 
+			    	 
 			     OrderBooking_Map.order.put(productId[position].toString(), Pcs.getText().toString());
+			     OrderBooking_Map.order2.put(product[position], Pcs.getText().toString());
 			     map.put(""+position, Pcs.getText().toString());
+			     OrderBooking.setquantity(""+val);
+			    
 			   }
 			
 		}

@@ -21,14 +21,14 @@ import android.widget.TextView;
 public class OrderManagmentAdapter extends ArrayAdapter {
 	private final Activity context;
 
-	private final ArrayList<String>  retailer;
-	private final ArrayList<String>  noofpics;
-	private final ArrayList<String>  values;
-	private final ArrayList<String>  road;
-	private final ArrayList<String>  visit;
+	private final String[]  retailer;
+	private final String[]  noofpics;
+	private final String[]  values;
+	private final String[]  road;
+	private final String[]  visit;
 	
 	
-	public OrderManagmentAdapter(Activity context,ArrayList<String> retailer,ArrayList<String> noofpics,ArrayList<String> values,ArrayList<String> road,ArrayList<String> visit) {
+	public OrderManagmentAdapter(Activity context,String[] retailer,String[] noofpics,String[] values,String[] road,String[] visit) {
 	super(context, R.layout.ordermanagement_listdesign, retailer);
 	this.context = context;
 	
@@ -49,10 +49,17 @@ public class OrderManagmentAdapter extends ArrayAdapter {
 	TextView roadvisit = (TextView) rowView.findViewById(R.id.txtOrderManagementRoadVisit);
 	
 	
-	retailertxt.setText(retailer.get(position));
-	noofpic.setText(noofpics.get(position));
-	value.setText(values.get(position));
-	roadvisit.setText(road.get(position)+"No. of Visit"+visit.get(position));
+	retailertxt.setText(retailer[position]);
+	noofpic.setText(noofpics[position]);
+	value.setText(values[position]);
+	if(road!=null)
+		{
+		  roadvisit.setText(road[position]+"No. of Visit    :"+visit[position]);
+		}
+	else
+	    {
+		 roadvisit.setText(""+"No. of Visit   :"+visit[position]);
+	    }
 
 	return rowView;
 	}

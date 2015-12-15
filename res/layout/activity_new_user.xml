@@ -33,38 +33,19 @@
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/relativeNewUserNext"
         android:layout_alignParentLeft="true"
-        android:fillViewport="true"
-        android:layout_below="@+id/relativeLayout1" >
+        android:layout_below="@+id/relativeLayout1"
+        android:fillViewport="true" >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <RelativeLayout
-                android:id="@+id/relativeNewUserNext"
-                android:layout_width="match_parent"
-                android:layout_height="30sp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:background="#1ea8e0" >
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:text="Next"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            </RelativeLayout>
+            android:layout_height="100dp" >
 
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_above="@+id/relativeNewUserNext"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true" >
 
@@ -81,14 +62,12 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/edittxtNewRetailerFSSAIno"
+                        android:id="@+id/editxtNewRetailerName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10" >
-
-                       
-                    </EditText>
+                   </EditText>
                 </LinearLayout>
 
                 <LinearLayout
@@ -104,7 +83,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/edittxtNewRetailerRetailerTypr"
+                        android:id="@+id/editxtNewRetailerAddressLine"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -124,7 +103,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/edittxtNewRetailerUderBrand"
+                        android:id="@+id/editxtNewRetailerState"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -144,11 +123,34 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/edittxtNewRetailerStoreType"
+                        android:id="@+id/EditxtNewRetailerDistrict"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     android:layout_marginTop="5sp" >
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:text="City"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/editxtNewRetailerCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+
+                    </EditText>
 
                 </LinearLayout>
 
@@ -164,7 +166,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/edittxtNewRetailerStoreSize"
+                        android:id="@+id/editxtNewRetailerArea"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -184,7 +186,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/edittxtNewRetailerAssociatedSaleOfficer"
+                        android:id="@+id/editxtNewRetailerPincode"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -204,7 +206,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/edittxtNewRetailerDistributer"
+                        android:id="@+id/editxtNewRetailerContactNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -224,7 +226,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/edittxtNewRetailerContactPerson"
+                        android:id="@+id/editxtNewRetailerContactPerson"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -248,7 +250,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:ems="10" />
+                        android:ems="10"
+                        android:inputType="textEmailAddress" />
 
                 </LinearLayout>
 
@@ -316,5 +319,23 @@
         </RelativeLayout>
      
     </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativeNewUserNext"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#1ea8e0" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Next"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </RelativeLayout>
 
 </RelativeLayout>

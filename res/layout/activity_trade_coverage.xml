@@ -21,7 +21,7 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/linearbelow2"
         android:layout_width="match_parent"
         android:layout_height="40sp"
         android:layout_below="@+id/relativeLayout1"
@@ -38,7 +38,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:text="Search"
-                android:textStyle="bold" />
+                android:textStyle="bold" 
+                android:visibility="gone"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -46,13 +47,14 @@
             android:layout_height="match_parent" >
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/editxtNewRetailerCity"
                 android:layout_width="wrap_content"
                 android:layout_height="30sp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/edittext"
-                android:ems="10" >
+                android:ems="10" 
+                android:visibility="gone">
 
                
             </EditText>
@@ -64,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="30sp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/linearLayout1"
+        android:layout_below="@+id/linearbelow2"
         android:background="#1ea8e0" >
 
         <Button
@@ -106,28 +108,23 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+             >
 
-            <fragment
-                android:id="@+id/fragmentTradecoverage_route"
-                android:name="com.cmipl.cmipl_app.Frag_Tradecoverage_Route"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+            <Spinner
+                android:id="@+id/spinnerTradeCoverageDist"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp" />
 
-            <fragment
-                android:id="@+id/fragmentTradecoverage_Near"
-                android:name="com.cmipl.cmipl_app.Frag_Tradecoverage_Near"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <fragment
-                android:id="@+id/fragmentTradeCoverageMap"
-                android:name="com.cmipl.cmipl_app.FragmMap_tradecoverage"
+            <ListView
+                android:id="@+id/listTradeCoverageRetailrs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_below="@+id/spinnerTradeCoverageDist"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" >
+
+            </ListView>
 
         </RelativeLayout>
 

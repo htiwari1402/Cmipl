@@ -1,0 +1,200 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#1ea8e0" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Retail Master"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/btnNewUserBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="Back"
+            android:background="#1ea8e0" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/relativeAddNewRetailerAdd"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:fillViewport="true" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15sp" >
+
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="130sp"
+                        android:layout_height="wrap_content"
+                        android:text="Retailer Name  "
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/editxtAddNewRetailerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                   </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                     android:layout_marginTop="20sp">
+
+                    <TextView
+                        android:layout_width="130sp"
+                        android:layout_height="wrap_content"
+                        
+                        android:text="Address Line"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/editxtAddNewRetailerAddressLine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     android:layout_marginTop="20sp" >
+
+                    <TextView
+                        android:layout_width="130sp"
+                        android:layout_height="wrap_content"
+                        android:text="State               "
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/editxtAddNewRetailerState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                     android:layout_marginTop="20sp">
+
+                    <TextView
+                        android:layout_width="130sp"
+                        android:layout_height="wrap_content"
+                        android:text="District         "
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/EditxtAddNewRetailerDistrict"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     android:layout_marginTop="20sp" >
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:text="City"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/editxtAddNewRetailerCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+
+                    </EditText>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     android:layout_marginTop="20sp" >
+
+                    <TextView
+                        android:layout_width="130sp"
+                        android:layout_height="wrap_content"
+                        android:text="Country         "
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <EditText
+                        android:id="@+id/editxtAddNewRetailerArea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" />
+
+                </LinearLayout>
+            </TableLayout>
+
+        </RelativeLayout>
+     
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativeAddNewRetailerAdd"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#1ea8e0" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Save"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,6 +1,9 @@
 package com.cmipl.cmipl_app;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +13,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Reports extends Activity {
 
@@ -22,110 +26,72 @@ public class Reports extends Activity {
 		final Button b3 = (Button) findViewById(R.id.btnDUMTR);
 		final Button b4 = (Button) findViewById(R.id.btnTop10);
 		final Button b5 = (Button) findViewById(R.id.btnMumtr);
-		final RelativeLayout r1 = (RelativeLayout) findViewById(R.id.relativeReport1);
-		final RelativeLayout r2 = (RelativeLayout) findViewById(R.id.relativeReport2);
-		final RelativeLayout r3 = (RelativeLayout) findViewById(R.id.relativeReport3);
-		final RelativeLayout r4 = (RelativeLayout) findViewById(R.id.relativetop10);
+		
 		final TextView t = (TextView) findViewById(R.id.txtReportTitle);
+		FragmentManager fm = getFragmentManager();
+		final Fragment mumtr = fm.findFragmentById(R.id.fragment1);
+		final Fragment dumtr = fm.findFragmentById(R.id.fragment2);
 		
-		b.setOnClickListener(new OnClickListener() {
+		  FragmentTransaction ft = getFragmentManager().beginTransaction();
+	      ft.show(mumtr) ;
+	      ft.hide(dumtr);
+	     
+	      ft.commit();
+	      
+	      b.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
-				b.setBackgroundColor(Color.WHITE);
-				b2.setBackgroundColor(Color.rgb(0, 176, 240));
-				b3.setBackgroundColor(Color.rgb(0, 176, 240));
-				b4.setBackgroundColor(Color.rgb(0, 176, 240));
-				b5.setBackgroundColor(Color.rgb(0, 176, 240));
-				
-				r1.setVisibility(View.VISIBLE);
-				r2.setVisibility(View.INVISIBLE);
-				r3.setVisibility(View.INVISIBLE);
-				r4.setVisibility(View.INVISIBLE);
-				t.setText("My Monthly Performance Report");
+				FragmentManager fm = getFragmentManager();
+				 FragmentTransaction ft = getFragmentManager().beginTransaction();
+			      ft.show(mumtr) ;
+			      ft.hide(dumtr);
+			     
+			      ft.commit();
+			      t.setText("My Monthly Performance Reports");
 			}
 		});
-		
-		b2.setOnClickListener(new OnClickListener() {
+	      b3.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				b2.setBackgroundColor(Color.WHITE);
-				b.setBackgroundColor(Color.rgb(0, 176, 240));
-				b3.setBackgroundColor(Color.rgb(0, 176, 240));
-				b4.setBackgroundColor(Color.rgb(0, 176, 240));
-				b5.setBackgroundColor(Color.rgb(0, 176, 240));
-				
-				r1.setVisibility(View.INVISIBLE);
-				r2.setVisibility(View.VISIBLE);
-				r3.setVisibility(View.INVISIBLE);
-				r4.setVisibility(View.INVISIBLE);
-				t.setText("My Daily Closing");
+				FragmentManager fm = getFragmentManager();
+				 FragmentTransaction ft = getFragmentManager().beginTransaction();
+			      ft.show(dumtr) ;
+			      ft.hide(mumtr);
+			     
+			      ft.commit();
+			      t.setText("Daily Under My Team Report");
 			}
 		});
-		
-		b3.setOnClickListener(new OnClickListener() {
+	      
+	      b2.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				b3.setBackgroundColor(Color.WHITE);
-				b2.setBackgroundColor(Color.rgb(0, 176, 240));
-				b.setBackgroundColor(Color.rgb(0, 176, 240));
-				b4.setBackgroundColor(Color.rgb(0, 176, 240));
-				b5.setBackgroundColor(Color.rgb(0, 176, 240));
-				
-				r1.setVisibility(View.INVISIBLE);
-				r2.setVisibility(View.INVISIBLE);
-				r3.setVisibility(View.VISIBLE);
-				r4.setVisibility(View.INVISIBLE);
-				t.setText("Daily Uder My Team Report");
+				Toast.makeText(Reports.this, "This Module is under construction", Toast.LENGTH_LONG).show();
 			}
 		});
-		
-		
-		 b4.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				b4.setBackgroundColor(Color.WHITE);
-				b2.setBackgroundColor(Color.rgb(0, 176, 240));
-				b.setBackgroundColor(Color.rgb(0, 176, 240));
-				b3.setBackgroundColor(Color.rgb(0, 176, 240));
-				b5.setBackgroundColor(Color.rgb(0, 176, 240));
+	      b4.setOnClickListener(new OnClickListener() {
 				
-				r1.setVisibility(View.INVISIBLE);
-				r2.setVisibility(View.INVISIBLE);
-				r3.setVisibility(View.INVISIBLE);
-				r4.setVisibility(View.VISIBLE);
-				t.setText("Top 10");
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Toast.makeText(Reports.this, "This Module is under construction", Toast.LENGTH_LONG).show();
+				}
+			});
+	      b5.setOnClickListener(new OnClickListener() {
 				
-			}
-		});
-		 
-		 
-		 b5.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				b5.setBackgroundColor(Color.WHITE);
-				b2.setBackgroundColor(Color.rgb(0, 176, 240));
-				b.setBackgroundColor(Color.rgb(0, 176, 240));
-				b4.setBackgroundColor(Color.rgb(0, 176, 240));
-				b3.setBackgroundColor(Color.rgb(0, 176, 240));
-				
-				r1.setVisibility(View.INVISIBLE);
-				r2.setVisibility(View.INVISIBLE);
-				r3.setVisibility(View.VISIBLE);
-				r4.setVisibility(View.INVISIBLE);
-				t.setText("Monthly Under My Team Report");
-			}
-		});
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Toast.makeText(Reports.this, "This Module is under construction", Toast.LENGTH_LONG).show();
+				}
+			});
+	
 	}
 
 	@Override

@@ -44,7 +44,7 @@
             android:layout_height="match_parent" >
 
             <RelativeLayout
-                android:id="@+id/relativeNewUserNext"
+                android:id="@+id/relativeNewUserSave"
                 android:layout_width="match_parent"
                 android:layout_height="30sp"
                 android:layout_alignParentBottom="true"
@@ -65,7 +65,7 @@
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_above="@+id/relativeNewUserNext"
+                android:layout_above="@+id/relativeNewUserSave"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true" >
 
@@ -82,7 +82,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/edittxtNewRetailerFSSAIno"
+                        android:id="@+id/txtfssaino"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -100,16 +100,15 @@
                     <TextView
                         android:layout_width="130sp"
                         android:layout_height="wrap_content"
-                        
                         android:text="Retailer Type"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-	                    <Spinner
-	                        android:id="@+id/edittxtNewRetailerRetailerTypr"
-	                        android:layout_width="wrap_content"
-	                        android:layout_height="30sp"
-	                        android:layout_weight="1"
-	                        android:ems="10" />
+                    <Spinner
+                        android:id="@+id/spinnerNewRetailerType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30sp"
+                        android:layout_weight="1"
+                        android:ems="10" />
 
                 </LinearLayout>
 
@@ -125,7 +124,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <Spinner
-                        android:id="@+id/edittxtNewRetailerUderBrand"
+                        android:id="@+id/spinnerNewRetailerUnderBrand"
                         android:layout_width="match_parent"
                         android:layout_height="30sp"
                         android:layout_weight="1"
@@ -145,7 +144,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <Spinner
-                        android:id="@+id/edittxtNewRetailerStoreType"
+                        android:id="@+id/spinnerNewRetailerStoreType"
                         android:layout_width="wrap_content"
                         android:layout_height="30sp"
                         android:layout_weight="1"
@@ -165,7 +164,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <Spinner
-                        android:id="@+id/edittxtNewRetailerStoreSize"
+                        android:id="@+id/spinnerNewRetailerStoreSize"
                         android:layout_width="wrap_content"
                         android:layout_height="30sp"
                         android:layout_weight="1"
@@ -185,7 +184,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <Spinner
-                        android:id="@+id/edittxtNewRetailerAssociatedSaleOfficer"
+                        android:id="@+id/spinnerNewRetailerAssociateSaleOfficer"
                         android:layout_width="wrap_content"
                         android:layout_height="30sp"
                         android:layout_weight="1"
@@ -205,7 +204,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <Spinner
-                        android:id="@+id/edittxtNewRetailerDistributer"
+                        android:id="@+id/spinnerNewRetailerAssociatedDistributr"
                         android:layout_width="wrap_content"
                         android:layout_height="30sp"
                         android:layout_weight="1"
@@ -225,7 +224,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <EditText
-                        android:id="@+id/edittxtNewRetailerContactPerson"
+                        android:id="@+id/txtRouteBitname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

@@ -10,8 +10,10 @@ import org.json.JSONObject;
 
 import com.cmipl.cmipl_app.design.OrderBookingListAdapter;
 
+import URL.Url;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -44,6 +46,10 @@ public class OrderBooking extends Activity {
     static TextView txtTotal;
     TextView txtTotalValue;
     HashMap<String, String> map;
+    String storeid,distId,visitRef;
+    static int t=0;
+    static TextView pricetxt,quantitytxt;
+    static Activity act;
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +59,15 @@ public class OrderBooking extends Activity {
 		    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		    StrictMode.setThreadPolicy(policy);
 		}
+		act = this;
 		map = new HashMap<String, String>();
 		Intent i = getIntent();
 		retailername = i.getStringExtra("retailername");
+		storeid = i.getStringExtra("storeid");
+		distId = i.getStringExtra("distId");
+		visitRef = i.getStringExtra("visitRef");
+		
+		String visit = i.getStringExtra("visitno");
 		Button saveOrder = (Button) findViewById(R.id.btnOrderbookingSave);
 		progress=ProgressDialog.show(OrderBooking.this, "","Loading Product Data, Please wait...", true);
 		list= (ListView) findViewById(R.id.listOrderBooking_List);
@@ -64,12 +76,26 @@ public class OrderBooking extends Activity {
 		subcategorySpinner = (Spinner) findViewById(R.id.spinOrderBookingSubCategory);
 		txtTotal = (TextView) findViewById(R.id.txtOrderBookingTotal);
 		txtTotalValue =(TextView) findViewById(R.id.txtOrderBookingTotalvalues);
+		pricetxt = (TextView) findViewById(R.id.txtOrderBookingPrice);
+		quantitytxt = (TextView) findViewById(R.id.txtOrderBookingOquantity);
+		TextView txtvisit = (TextView)findViewById(R.id.txtOrderBookingVisitNo);
+		Button canelOrder = (Button) findViewById(R.id.btnOrderBookingCanel);
 		
+		
+		txtvisit.setText(visit);
 		txtTotal.setText("0");
-	
-		new LoadProductData().execute("http://cmiplonline.com/wb_services/allProducts.php");
+	    Log.i(Url.URL,"aaaaaaaaaaaaaaaaaaaassssssssssssssss");
+		new LoadProductData().execute(Url.URL+"allProducts.php");
 		
 		
+		canelOrder.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
 		
 		categorySpinner.setOnTouchListener(new  OnTouchListener() {
 			
@@ -96,12 +122,12 @@ public class OrderBooking extends Activity {
 					if(position > 0)
 						{ 
 							Toast.makeText(OrderBooking.this, "Selected item All", Toast.LENGTH_LONG).show();
-							new LoadSubCat().execute("http://cmiplonline.com/wb_services/allProducts.php");
+							new LoadSubCat().execute(Url.URL+"allProducts.php");
 							isCategoryEventTouched= false;
 						}
 					else
 						{
-						   new  LoadProductData().execute("http://cmiplonline.com/wb_services/allProducts.php");
+						   new  LoadProductData().execute(Url.URL+"allProducts.php");
 						   isCategoryEventTouched= false;
 						}
 			  }
@@ -135,12 +161,12 @@ public class OrderBooking extends Activity {
 					SelectedBrand = brandSpinner.getSelectedItem().toString();
 					if(position > 0)
 					  {
-						new LoadProductBrandWise().execute("http://cmiplonline.com/wb_services/allProducts.php");
+						new LoadProductBrandWise().execute(Url.URL+"allProducts.php");
 						isBrandSpinnerTouched= false;
 					  }	
 					else
 						{
-						 new LoadProductData().execute("http://cmiplonline.com/wb_services/allProducts.php"); 
+						 new LoadProductData().execute(Url.URL+"allProducts.php"); 
 						 isBrandSpinnerTouched= false;
 						}
 					
@@ -175,12 +201,12 @@ public class OrderBooking extends Activity {
 					SelectedSubCategory = subcategorySpinner.getSelectedItem().toString();
 					if(position >0)
 					  {
-						new LoadProductforSubCat().execute("http://cmiplonline.com/wb_services/allProducts.php");
+						new LoadProductforSubCat().execute(Url.URL+"allProducts.php");
 						isSubcategoryEventTouched = false;
 					  }
 					else
 						{
-						  new LoadProductData().execute("http://cmiplonline.com/wb_services/allProducts.php");
+						  new LoadProductData().execute(Url.URL+"allProducts.php");
 						  isSubcategoryEventTouched = false;
 						}
 				  }
@@ -199,43 +225,70 @@ public class OrderBooking extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				OrderBooking_Map.order.put("storeId", "1");
+				OrderBooking_Map.order.put("storeId", storeid);
+				OrderBooking_Map.order.put("distId", distId);
+				OrderBooking_Map.order.put("so_id", Url.soID);
+				OrderBooking_Map.order.put("visitRef", visitRef);
+				//Toast.makeText(OrderBooking.this, distId, Toast.LENGTH_LONG).show();
 				try {
-					 JSONObject obj = new JSONObject(OrderBooking_Map.order);
+					Intent i = new Intent(OrderBooking.this, ConfirmOrder.class);
+					 i.putExtra("retailername", retailername);
+					 i.putExtra("storeId", storeid);
 					 
-					 ServiceHandler sh = new ServiceHandler();
-					 String t=URLEncoder.encode(obj.toString(),"UTF-8");
-					 String response = sh.makeServiceCall("http://cmiplonline.com/wb_services/OrderEntry.php?new_order="+t, ServiceHandler.POST);
-					 
-					  
-					  Toast.makeText(OrderBooking.this, ""+obj+response, Toast.LENGTH_LONG).show();
+					 startActivity(i);
 				    } 
 				catch (Exception e) 
 				      {
-					 Toast.makeText(OrderBooking.this, e.toString(), Toast.LENGTH_LONG).show();  
+					    Toast.makeText(OrderBooking.this, e.toString(), Toast.LENGTH_LONG).show();  
 				       }
 			}
 		});
 	
 	
 	}
-	 public static void setTotal(int i , boolean action){
-		 int total, newTotal;
-		
-		 if(txtTotal.getText().toString()!= null){
-		    total = Integer.parseInt(txtTotal.getText().toString()); 
-			if(action){
-			   newTotal = total+i; 
-			}
-			else{
-			   newTotal = total-1;
-			}
-			txtTotal.setText(""+newTotal);
-		 }
+	 public static void setTotal(){
 		 
-		
-				 
+		try{
+		 
+		 if(OrderBooking_Map.order!=null){
+		  int tot =0;
+		 for(String i : OrderBooking_Map.order.values()){
+			 
+			 tot = tot + Integer.parseInt(i);
+		 }
+		 txtTotal.setText(""+tot);
+		 }
+		}catch(Exception e){}
 	 }
+	 
+	 public static void setPrice(String value){
+		 
+		 pricetxt.setText(value);
+		 
+	 }
+	 
+	 public static void setquantity(String val){
+		 quantitytxt.setText(val);
+	 }
+	 
+	 public static void finishActivity(){
+		
+		 act.finish();
+		 
+	 }
+	 
+	 @Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		OrderBooking_Map.order.clear();
+		OrderBooking_Map.order2.clear();
+		
+	}
+	 
+	
+	 
+	 
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	private class LoadProductData extends AsyncTask<String, Void, ArrayList<String []>> {
 
@@ -255,18 +308,21 @@ public class OrderBooking extends Activity {
 						String[] category   = new String[jsonArray.length()];
 						String[] product    = new String[jsonArray.length()];
 						String[] productId  = new String[jsonArray.length()];
+						String[] rate       = new String[jsonArray.length()];
 					    for(int i=0; i<jsonArray.length();i++)
 							{
 								JSONObject jsonObject = jsonArray.getJSONObject(i);
 								product[i]  =  jsonObject.getString("itemDesc");
 								brand[i]    =  jsonObject.getString("brand");
 								category[i] =  jsonObject.getString("productCategory");
-								productId[i]= jsonObject.getString("itemCode");
+								productId[i]=  jsonObject.getString("itemCode");
+								rate[i]     =  jsonObject.getString("salesRate");
 							}
 						productDetails.add(0,product);
 						productDetails.add(1,brand);
 						productDetails.add(2,category);
 						productDetails.add(3,productId);
+						productDetails.add(4,rate);
 					}
 					else return null;
 			    }
@@ -282,10 +338,11 @@ public class OrderBooking extends Activity {
 			
 			if(result!=null)
 			  {
-				String[] product = result.get(0);
+				String[] product     = result.get(0);
 				String[] brandArry   = result.get(1);
 				String[] categoryArry= result.get(2);
-				String[] productid = result.get(3);
+				String[] productid   = result.get(3);
+				String[] rate        = result.get(4);
 				ArrayList<String> brand = new ArrayList<String>();
 				ArrayList<String> category = new ArrayList<String>();
 				
@@ -300,7 +357,7 @@ public class OrderBooking extends Activity {
 				brand.add(0,"All Brands");
 				category.add(0,"All Cat");
 				
-				OrderBookingListAdapter orderlistadt = new OrderBookingListAdapter(OrderBooking.this, product,productid, retailername,map);
+				OrderBookingListAdapter orderlistadt = new OrderBookingListAdapter(OrderBooking.this, product,productid, retailername,map,rate);
 				list.setAdapter(orderlistadt);
 		
 				ArrayAdapter<String> adtbrand = new ArrayAdapter<String>(OrderBooking.this, android.R.layout.simple_list_item_1, brand);
@@ -348,6 +405,7 @@ public class OrderBooking extends Activity {
 			String[] subcat            = new String[jsonarray.length()];
 			String[] product           = new String[jsonarray.length()];
 			String[] productId         = new String[jsonarray.length()];
+			String[] rate              = new String[jsonarray.length()];
 			for(int i =0; i< jsonarray.length(); i++)
 			   {
 				 JSONObject jsonobject = jsonarray.getJSONObject(i);
@@ -356,11 +414,13 @@ public class OrderBooking extends Activity {
 					 product[i] = jsonobject.getString("itemDesc");
 					 subcat[i]  = jsonobject.getString("subCategory");
 					 productId[i] = jsonobject.getString("itemCode");
+					 rate[i] = jsonobject.getString("salesRate");
 				   } 
 			    }
 			superList.add(0,product);
 			superList.add(1,subcat);
 			superList.add(2,productId);
+			superList.add(3,rate);
 		  }catch(Exception e)
 		        {}
 		
@@ -379,11 +439,12 @@ public class OrderBooking extends Activity {
 				 String[] product = result.get(0);
 				 String[] subcat  = result.get(1);
 				 String[] productId = result.get(2);
+				 String[] rate      = result.get(3);
 				 ArrayList<String> newResult = getArrayList(subcat);
 				 ArrayAdapter adt = new ArrayAdapter(OrderBooking.this, android.R.layout.simple_list_item_1, newResult);
 				 subcategorySpinner.setAdapter(adt);
 				 
-				 OrderBookingListAdapter oadt = new OrderBookingListAdapter(OrderBooking.this, product, productId,retailername,map);
+				 OrderBookingListAdapter oadt = new OrderBookingListAdapter(OrderBooking.this, product, productId,retailername,map,rate);
 				 list.setAdapter(oadt);
 		       }catch(Exception e) 
 		             {
@@ -419,6 +480,7 @@ public class OrderBooking extends Activity {
 					JSONArray jsonArray = new JSONArray(json);
 					 String[] productname =  new String[jsonArray.length()];
 					 String[] productId = new String[jsonArray.length()];
+					 String[] rate = new String[jsonArray.length()];
 					for(int i=0; i<jsonArray.length();i++)
 						{
 						  JSONObject jobject = jsonArray.getJSONObject(i);
@@ -426,10 +488,12 @@ public class OrderBooking extends Activity {
 						  	{
 							  productname[i] = jobject.getString("itemDesc");
 							  productId[i]   = jobject.getString("itemCode");
+							  rate[i]        = jobject.getString("salesRate");
 						  	}
 						}
 					product.add(0,productname);
 					product.add(1,productId);
+					product.add(2,rate);
 				  }catch(Exception e){}
 				
 				return product;
@@ -445,8 +509,9 @@ public class OrderBooking extends Activity {
 			  { 
 				String[] product = result.get(0);
 				String[] productId = result.get(1);
+				String[] rate     = result.get(2);
 				
-				OrderBookingListAdapter oadt = new OrderBookingListAdapter(OrderBooking.this, product,productId,retailername,map);
+				OrderBookingListAdapter oadt = new OrderBookingListAdapter(OrderBooking.this, product,productId,retailername,map,rate);
 				list.setAdapter(oadt);
 				oadt.notifyDataSetChanged();
 			  }
@@ -465,6 +530,7 @@ public class OrderBooking extends Activity {
 				JSONArray  jarray = new JSONArray(json);
 				String[] productname = new String[jarray.length()];
 				String[] productId   = new String[jarray.length()];
+				String[] rate   = new String[jarray.length()];
 				for(int i=0;i<jarray.length();i++)
 				   {
 					JSONObject jobj = jarray.getJSONObject(i);
@@ -472,11 +538,13 @@ public class OrderBooking extends Activity {
 					   {
 						productname[i]= jobj.getString("itemDesc");
 						productId[i] = jobj.getString("itemCode");
+						rate[i] = jobj.getString("salesRate");
 								
 					   }
 				   }
 				product.add(0,productname);
 				product.add(1, productId);    
+				product.add(2,rate);
 			  }catch(Exception e){}
 			
 			return product;
@@ -488,8 +556,9 @@ public class OrderBooking extends Activity {
 			super.onPostExecute(result);
 			String product[] = result.get(0);
 			String productId[] = result.get(1);
+			String rate[] = result.get(2);
 			
-			OrderBookingListAdapter odt = new OrderBookingListAdapter(OrderBooking.this, product, productId,retailername,map);
+			OrderBookingListAdapter odt = new OrderBookingListAdapter(OrderBooking.this, product, productId,retailername,map,rate);
 			list.setAdapter(odt);
 		
 		}
